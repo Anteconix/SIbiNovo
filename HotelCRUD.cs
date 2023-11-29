@@ -8,10 +8,10 @@ namespace Sibi
 {
     public class HotelCRUD
     {
-        private string codigo, nome, cidade;
-        private BancoDados bd;
-        private Tela tl;
-        private int posicao;
+        public string codigo, nome, cidade;
+        public BancoDados bd;
+        public Tela tl;
+        public int posicao;
 
 
         public HotelCRUD(BancoDados banco, Tela tela)
@@ -39,7 +39,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("Hotel", new Hotel(this.nome, this.cidade));
+                        bd.gravar("Hotel", new Hotel(this.codigo, this.nome, this.cidade));
                     }
                 }
             }
@@ -47,8 +47,8 @@ namespace Sibi
             {
                 // alteração / exclusão
                 Hotel obj = (Hotel)bd.recuperar("Hotel", this.posicao);
-                this.nome = obj.nome;
-                this.cidade = obj.cidade;
+                nome = obj.Nome;
+                cidade = obj.Cidade;
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");
@@ -59,7 +59,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        Hotel novoObj = new Hotel(this.nome, this.cidade);
+                        Hotel novoObj = new Hotel(this.codigo, this.nome, this.cidade);
                         bd.alterar("Hotel", obj, novoObj);
                     }
                 }

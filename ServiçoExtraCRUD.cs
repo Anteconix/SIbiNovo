@@ -39,7 +39,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("ServicoExtra", new ServicoExtra(this.nome, this.preco));
+                        bd.gravar("ServicoExtra", new ServicoExtra(this.codigo, this.nome, this.preco));
                     }
                 }
             }
@@ -47,8 +47,8 @@ namespace Sibi
             {
                 // alteração / exclusão
                 ServicoExtra obj = (ServicoExtra)bd.recuperar("ServicoExtra", this.posicao);
-                this.nome = obj.nome;
-                this.preco = obj.preco;
+                this.nome = obj.Nome;
+                this.preco = obj.Preco;
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");
@@ -59,7 +59,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        ServicoExtra novoObj = new ServicoExtra(this.nome, this.preco);
+                        ServicoExtra novoObj = new ServicoExtra(this.codigo, this.nome, this.preco);
                         bd.alterar("ServicoExtra", obj, novoObj);
                     }
                 }

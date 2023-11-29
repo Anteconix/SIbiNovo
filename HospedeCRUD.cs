@@ -8,10 +8,10 @@ namespace Sibi
 {
     public class HospedeCRUD
     {
-        private string codigo, nome, cpf, endereco, telefone;
-        private BancoDados bd;
-        private Tela tl;
-        private int posicao;
+        public string codigo, nome, cpf, endereco, telefone;
+        public BancoDados bd;
+        public Tela tl;
+        public int posicao;
 
 
         public HospedeCRUD(BancoDados banco, Tela tela)
@@ -39,7 +39,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("Hospede", new Hospede(this.nome, this.cpf, this.endereco, this.telefone));
+                        bd.gravar("Hospede", new Hospede(this.codigo, this.nome, this.cpf, this.endereco, this.telefone));
                     }
                 }
             }
@@ -47,6 +47,7 @@ namespace Sibi
             {
                 // alteração / exclusão
                 Hospede obj = (Hospede)bd.recuperar("Hospede", this.posicao);
+                this.codigo = obj.codigo;
                 this.nome = obj.nome;
                 this.cpf = obj.cpf;
                 this.endereco = obj.endereco;

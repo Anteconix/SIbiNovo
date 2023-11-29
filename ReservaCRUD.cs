@@ -8,10 +8,10 @@ namespace Sibi
 {
     public class ReservaCRUD
     {
-        private string codigo, nome, cpf, endereco, telefone;
-        private BancoDados bd;
-        private Tela tl;
-        private int posicao;
+        public string codigo, nome, cpf, endereco, telefone;
+        public BancoDados bd;
+        public Tela tl;
+        public int posicao;
 
         public ReservaCRUD(BancoDados banco, Tela tela)
         {

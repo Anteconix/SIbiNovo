@@ -16,11 +16,11 @@ namespace Sibi
         private string telefone;
 
         // getters/setters
-        public string Codigo { get => codigo; private set => codigo = value; }
-        public string Nome { get => nome; private set => nome = value; }
-        public string Cpf { get => cpf; private set => cpf = value; }
-        public string Endereco { get => endereco; private set => endereco = value; }
-        public string Telefone { get => telefone; private set => telefone = value; }
+        public string Codigo { get => codigo; public set => codigo = value; }
+        public string Nome { get => nome; public set => nome = value; }
+        public string Cpf { get => cpf; public set => cpf = value; }
+        public string Endereco { get => endereco; public set => endereco = value; }
+        public string Telefone { get => telefone; public set => telefone = value; }
 
         // método construtor
         public Hospede(string cod, string nom, string cpf, string end, string tel)

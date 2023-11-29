@@ -39,7 +39,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("RedeHoteis", new RedeHoteis(this.nome));
+                        bd.gravar("RedeHoteis", new RedeHoteis(this.codigo, this.nome));
                     }
                 }
             }
@@ -47,7 +47,7 @@ namespace Sibi
             {
                 // alteração / exclusão
                 RedeHoteis obj = (RedeHoteis)bd.recuperar("RedeHoteis", this.posicao);
-                this.nome = obj.nome;               
+                this.nome = obj.Nome;               
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");
@@ -58,7 +58,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        RedeHoteis novoObj = new RedeHoteis(this.nome);
+                        RedeHoteis novoObj = new RedeHoteis(this.codigo,this.nome);
                         bd.alterar("RedeHoteis", obj, novoObj);
                     }
                 }

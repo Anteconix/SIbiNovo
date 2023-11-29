@@ -8,11 +8,10 @@ namespace Sibi
 {
     public class PagamentoCRUD
     {
-        private double codigo, valor;
-        private string tipo;
-        private BancoDados bd;
-        private Tela tl;
-        private int posicao;
+        public string codigo, valor, tipo;
+        public BancoDados bd;
+        public Tela tl;
+        public int posicao;
 
 
         public PagamentoCRUD(BancoDados banco, Tela tela)
@@ -40,7 +39,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("Pagamento", new Pagamento(this.valor, this.tipo));
+                        bd.gravar("pagamento", new Pagamento(this.codigo,this.valor,this.tipo));
                     }
                 }
             }
@@ -48,8 +47,8 @@ namespace Sibi
             {
                 // alteração / exclusão
                 Pagamento obj = (Pagamento)bd.recuperar("Pagamento", this.posicao);
-                this.valor = obj.valor;
-                this.tipo = obj.tipo;
+                valor = obj.Valor;
+                tipo = obj.Tipo;
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");
@@ -60,7 +59,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        Pagamento novoObj = new Pagamento(this.valor, this.tipo);
+                        Pagamento novoObj = new Pagamento(this.codigo, this.valor, this.tipo);
                         bd.alterar("Pagamento", obj, novoObj);
                     }
                 }

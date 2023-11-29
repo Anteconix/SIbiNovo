@@ -41,7 +41,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("Quarto", new Quarto(this.numero, this.tipo, this.disponivel));
+                        bd.gravar("Quarto", new Quarto(this.codigo, this.numero, this.tipo, this.disponivel));
                     }
                 }
             }
@@ -49,9 +49,9 @@ namespace Sibi
             {
                 // alteração / exclusão
                 Quarto obj = (Quarto)bd.recuperar("Quarto", this.posicao);
-                this.numero = obj.numero;
-                this.tipo = obj.tipo;
-                this.disponivel = obj.disponivel;
+                numero = obj.Numero;
+                tipo = obj.Tipo;
+                disponivel = obj.Disponivel;
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");
@@ -62,7 +62,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        Quarto novoObj = new Quarto(this.numero, this.tipo, this.disponivel);
+                        Quarto novoObj = new Quarto(this.codigo, this.numero, this.tipo, this.disponivel);
                         bd.alterar("Quarto", obj, novoObj);
                     }
                 }
