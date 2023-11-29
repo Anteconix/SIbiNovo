@@ -80,11 +80,11 @@ namespace Sibi
         {
             tl.montarMoldura(10, 6, 70, 12, "Cadastro de Quarto");
             Console.SetCursorPosition(11, 8);
-            Console.Write("Numero:       ");
+            Console.Write("Numero: ");
             Console.SetCursorPosition(11, 9);
-            Console.Write("Tipo:         ");
+            Console.Write("Tipo: ");
             Console.SetCursorPosition(11, 10);
-            Console.Write("Disponivel:   ");
+            Console.Write("Disponivel: ");
             Console.SetCursorPosition(11, 11);
         }
 

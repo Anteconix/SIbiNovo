@@ -79,9 +79,9 @@ namespace Sibi
         {
             tl.montarMoldura(10, 6, 70, 12, "Cadastro de Pagamento");
             Console.SetCursorPosition(11, 8);
-            Console.Write("Valor:        ");
+            Console.Write("Valor: ");
             Console.SetCursorPosition(11, 9);
-            Console.Write("Tipo:         ");
+            Console.Write("Tipo: ");
             Console.SetCursorPosition(11, 10);
         }
 
