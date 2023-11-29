@@ -47,8 +47,8 @@ namespace Sibi
             {
                 // alteração / exclusão
                 Pagamento obj = (Pagamento)bd.recuperar("Pagamento", this.posicao);
-                valor = obj.Valor;
-                tipo = obj.Tipo;
+                this.valor = obj.Valor;
+                this.tipo = obj.Tipo;
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");

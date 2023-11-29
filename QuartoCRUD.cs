@@ -49,9 +49,9 @@ namespace Sibi
             {
                 // alteração / exclusão
                 Quarto obj = (Quarto)bd.recuperar("Quarto", this.posicao);
-                numero = obj.Numero;
-                tipo = obj.Tipo;
-                disponivel = obj.Disponivel;
+                this.numero = obj.Numero;
+                this.tipo = obj.Tipo;
+                this.disponivel = obj.Disponivel;
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");

@@ -47,8 +47,8 @@ namespace Sibi
             {
                 // alteração / exclusão
                 Hotel obj = (Hotel)bd.recuperar("Hotel", this.posicao);
-                nome = obj.Nome;
-                cidade = obj.Cidade;
+                this.nome = obj.Nome;
+                this.cidade = obj.Cidade;
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");

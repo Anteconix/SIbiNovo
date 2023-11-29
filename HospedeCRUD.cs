@@ -47,11 +47,11 @@ namespace Sibi
             {
                 // alteração / exclusão
                 Hospede obj = (Hospede)bd.recuperar("Hospede", this.posicao);
-                this.codigo = obj.codigo;
-                this.nome = obj.nome;
-                this.cpf = obj.cpf;
-                this.endereco = obj.endereco;
-                this.telefone = obj.telefone;
+                this.codigo = obj.Codigo;
+                this.nome = obj.Nome;
+                this.cpf = obj.Cpf;
+                this.endereco = obj.Endereco;
+                this.telefone = obj.Telefone;
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");
@@ -62,7 +62,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        Hospede novoObj = new Hospede(this.nome, this.cpf, this.endereco, this.telefone);
+                        Hospede novoObj = new Hospede(this.codigo,this.nome, this.cpf, this.endereco, this.telefone);
                         bd.alterar("Hospede", obj, novoObj);
                     }
                 }

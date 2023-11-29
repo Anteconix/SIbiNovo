@@ -38,7 +38,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("reserva", new Reserva(this.nome, this.cpf, this.endereco, this.telefone));
+                        bd.gravar("reserva", new Reserva(this.codigo, this.nome, this.cpf, this.endereco, this.telefone));
                     }
                 }
             }
@@ -47,9 +47,9 @@ namespace Sibi
                 // alteração / exclusão
                 Reserva obj = (Reserva)bd.recuperar("reserva", this.posicao);
                 this.nome = obj.Nome;
-                this.cpf = obj.cpf;
-                this.endereco = obj.endereco;
-                this.telefone = obj.telefone;
+                this.cpf = obj.Cpf;
+                this.endereco = obj.Endereco;
+                this.telefone = obj.Telefone;
 
                 this.mostrarDados();
                 resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");
@@ -60,7 +60,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        Reserva novoObj = new Reserva(this.nome, this.cpf, this.endereco, this.telefone);
+                        Reserva novoObj = new Reserva(this.codigo, this.nome, this.cpf, this.endereco, this.telefone);
                         bd.alterar("reserva", obj, novoObj);
                     }
                 }
