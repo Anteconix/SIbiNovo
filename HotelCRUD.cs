@@ -32,11 +32,11 @@ namespace Sibi
             if (this.posicao == -1)
             {
                 // cadastro
-                resp = tl.fazerPergunta(11, 11, "Registro NÃO encontrado. Deseja cadastrar (S/N):");
+                resp = tl.fazerPergunta(11, 14, "Registro NÃO encontrado. Deseja cadastrar (S/N):");
                 if (resp.ToUpper() == "S")
                 {
                     this.entrarDados();
-                    resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
+                    resp = tl.fazerPergunta(11, 14, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
                         bd.gravar("Hotel", new Hotel(this.codigo, this.nome, this.cidade));
@@ -51,12 +51,12 @@ namespace Sibi
                 this.cidade = obj.Cidade;
 
                 this.mostrarDados();
-                resp = tl.fazerPergunta(11, 11, "Deseja alterar/excluir/voltar (A/E/V):");
+                resp = tl.fazerPergunta(11, 14, "Deseja alterar/excluir/voltar (A/E/V):");
                 if (resp.ToUpper() == "A")
                 {
                     this.tl.limparArea(27, 9, 69, 10);
                     this.entrarDados();
-                    resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
+                    resp = tl.fazerPergunta(11, 14, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
                         Hotel novoObj = new Hotel(this.codigo, this.nome, this.cidade);
@@ -65,7 +65,7 @@ namespace Sibi
                 }
                 if (resp.ToUpper() == "E")
                 {
-                    resp = tl.fazerPergunta(11, 11, "Confirma exclusão (S/N):");
+                    resp = tl.fazerPergunta(11, 14, "Confirma exclusão (S/N):");
                     if (resp.ToUpper() == "S")
                     {
                         bd.excluir("Hotel", obj);
@@ -77,12 +77,14 @@ namespace Sibi
 
         public void montarTela()
         {
-            tl.montarMoldura(10, 6, 70, 12, "Cadastro de Hotel");
+            tl.montarMoldura(10, 6, 70, 13, "Cadastro de Hotel");
             Console.SetCursorPosition(11, 8);
-            Console.Write("Nome: ");
+            Console.Write("Codigo:  ");
             Console.SetCursorPosition(11, 9);
-            Console.Write("Cidade: ");
+            Console.Write("Nome:   ");
             Console.SetCursorPosition(11, 10);
+            Console.Write("Cidade: ");
+            Console.SetCursorPosition(11, 11);
         }
 
         public void entrarCodigo()
