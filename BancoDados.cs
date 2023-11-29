@@ -27,8 +27,8 @@ namespace Sibi
             this.hoteis.Add(new Hotel("2", "Glorian Real", "Barra Velha"));
 
             // adiciona alguns Quartos
-            this.quartos.Add(new Quarto("1", 1001, "Suíte Premium", true));
-            this.quartos.Add(new Quarto("2", 101, "Suíte Báscia", false));
+            this.quartos.Add(new Quarto("1", "Carlos", "1001", "Suíte Premium", "s"));
+            this.quartos.Add(new Quarto("2", "Bryann", "101", "Suíte Báscia", "n"));
 
             // adicona alguns hospedes
             this.hospedes.Add(new Hospede("1", "Carlos Magno", "00000000000", "Rua Fulano de Tal, 101", "4799999-9999"));
@@ -71,7 +71,7 @@ namespace Sibi
             if (onde == "hotel") this.hoteis.Add((Hotel)oque);
             if (onde == "pagamento") this.pagamentos.Add((Pagamento)oque);
             if (onde == "quarto") this.quartos.Add((Quarto)oque);
-            if (onde == "redehotel") this.redeshoteis.Add((RedeHotel)oque);
+            if (onde == "redehotel") this.redeshoteis.Add((RedeHoteis)oque);
             if (onde == "reserva") this.reservas.Add((Reserva)oque);
             if (onde == "servicoextra") this.servicosextras.Add((ServicoExtra)oque);
 

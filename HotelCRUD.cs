@@ -79,9 +79,9 @@ namespace Sibi
         {
             tl.montarMoldura(10, 6, 70, 12, "Cadastro de Hotel");
             Console.SetCursorPosition(11, 8);
-            Console.Write("Nome        :");
+            Console.Write("Nome:           ");
             Console.SetCursorPosition(11, 9);
-            Console.Write("Cidade         :");
+            Console.Write("Cidade:         ");
             Console.SetCursorPosition(11, 10);
         }
 

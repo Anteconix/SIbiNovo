@@ -8,9 +8,7 @@ namespace Sibi
 {
     public class QuartoCRUD
     {
-        private int numero;
-        private string codigo, tipo;
-        private bool disponivel;
+        private string codigo, nome, numero, tipo, disponivel;
         private BancoDados bd;
         private Tela tl;
         private int posicao;
@@ -41,7 +39,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("Quarto", new Quarto(this.codigo, this.numero, this.tipo, this.disponivel));
+                        bd.gravar("Quarto", new Quarto(this.codigo, this.nome, this.numero, this.tipo, this.disponivel));
                     }
                 }
             }
@@ -62,7 +60,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        Quarto novoObj = new Quarto(this.codigo, this.numero, this.tipo, this.disponivel);
+                        Quarto novoObj = new Quarto(this.codigo, this.nome, this.numero, this.tipo, this.disponivel);
                         bd.alterar("Quarto", obj, novoObj);
                     }
                 }
@@ -82,11 +80,11 @@ namespace Sibi
         {
             tl.montarMoldura(10, 6, 70, 12, "Cadastro de Quarto");
             Console.SetCursorPosition(11, 8);
-            Console.Write("Numero        :");
+            Console.Write("Numero:       ");
             Console.SetCursorPosition(11, 9);
-            Console.Write("Tipo         :");
+            Console.Write("Tipo:         ");
             Console.SetCursorPosition(11, 10);
-            Console.Write("Disponivel    :");
+            Console.Write("Disponivel:   ");
             Console.SetCursorPosition(11, 11);
         }
 

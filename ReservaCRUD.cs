@@ -80,13 +80,13 @@ namespace Sibi
         {
             tl.montarMoldura(10, 6, 70, 12, "Cadastro de Reserva");
             Console.SetCursorPosition(11, 8);
-            Console.Write("Nome        :");
+            Console.Write("Nome:        ");
             Console.SetCursorPosition(11, 9);
-            Console.Write("CPF         :");
+            Console.Write("CPF:         ");
             Console.SetCursorPosition(11, 10);
-            Console.Write("Endereco    :");
+            Console.Write("Endereco:    ");
             Console.SetCursorPosition(11, 11);
-            Console.Write("Telefone    :");
+            Console.Write("Telefone:    ");
         }
 
         public void entrarCodigo()

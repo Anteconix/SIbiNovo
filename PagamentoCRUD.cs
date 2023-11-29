@@ -8,7 +8,7 @@ namespace Sibi
 {
     public class PagamentoCRUD
     {
-        public string codigo, valor, tipo;
+        public string codigo, nome, valor, tipo;
         public BancoDados bd;
         public Tela tl;
         public int posicao;
@@ -39,7 +39,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma cadastro (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        bd.gravar("pagamento", new Pagamento(this.codigo,this.valor,this.tipo));
+                        bd.gravar("pagamento", new Pagamento(this.codigo, this.nome, this.valor,this.tipo));
                     }
                 }
             }
@@ -59,7 +59,7 @@ namespace Sibi
                     resp = tl.fazerPergunta(11, 11, "Confirma alteração (S/N):");
                     if (resp.ToUpper() == "S")
                     {
-                        Pagamento novoObj = new Pagamento(this.codigo, this.valor, this.tipo);
+                        Pagamento novoObj = new Pagamento(this.codigo, this.nome, this.valor, this.tipo);
                         bd.alterar("Pagamento", obj, novoObj);
                     }
                 }
@@ -79,9 +79,9 @@ namespace Sibi
         {
             tl.montarMoldura(10, 6, 70, 12, "Cadastro de Pagamento");
             Console.SetCursorPosition(11, 8);
-            Console.Write("Valor        :");
+            Console.Write("Valor:        ");
             Console.SetCursorPosition(11, 9);
-            Console.Write("Tipo         :");
+            Console.Write("Tipo:         ");
             Console.SetCursorPosition(11, 10);
         }
 
